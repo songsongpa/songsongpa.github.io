@@ -1,23 +1,33 @@
 # Setup
-locale:              ko-KR
-title:               songsongpa's blog
-tagline:             "A Jekyll theme"
-description:         "개발 및 공부 블로그"
-url:                 "https://songsongpa.github.io"
-baseurl:             ""
-paginate:            5
-permalink:           pretty
+locale: ko-KR
+timezone: Asia/Seoul
+title: songsongpa's blog
+tagline: ""
+description: "개발 및 공부 블로그"
+url: "https://songsongpa.github.io"
+baseurl: ""
+paginate: 10
+permalink: pretty
 
 # About/contact
 author:
-  name:              songsongpa
-  url:               
-  email:             songsongpa0322@gmail.com
+  name: songsongpa
+  url:
+  email: songsongpa0322@gmail.com
+
+github:
+  username: songsongpa
+  repo: https://github.com/songsongpa?tab=repositories
 
 # Gems
 plugins:
   - jekyll-paginate
 
-# Custom vars
-version:             1.1.0
-google_analytics_id: #UA-XXXX-Y
+exclude:
+  - vendor
+  - Gemfile.lock
+  - Gemfile
+  - tools
+  - docs
+  - README.md
+  - LICENSE
