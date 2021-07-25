@@ -3,7 +3,7 @@ layout: post
 title: 자바 개발 간소화
 
 categories:
-- Spring-In-Action_4th_Edition
+- Spring-In-Action-4th-Edition
 
 tags:
 - [Spring In Action, EJB, POJO, JavaBeans, Bean]
@@ -64,7 +64,7 @@ JBoss, Glassfish, Weblogic 및 Websphere 등등이 응용 프로그램 서버의
 
 ### JavaBeans의 단점
 - `property`가 많을수록 `getter`, `sette`를 만들기 어렵고 인수를 받지않는 기본 생성자는 잘못된 상태(적절하지 못한 초기화)를 유발할 수 있다.
-- 상투적인 코드(Boilerplate Code)가 증가(`getter`, `setter`) 한다.
+- 상투적인 코드(Boilerplate Code)가 증가 한다.(`getter`, `setter`)
 
 ### JavaBeans의 예
 ```java
@@ -102,8 +102,8 @@ public class PersonBean implements java.io.Serializable {
 
 ### EJB와 JavaBenas의 차이
 - EJB는 엔터프라이즈 소프트웨어의 모듈식 구성을 허용하는 Java API이고 JavaBeans는 다수의 객체를 단일 객체로 캡슐화하는 Java 클래스다.
-- EJB는 EJB 어플리케이션을 실행하기 위한 서버 또는 EJB컨테이너가 필요하며, JavaBeans는 직렬화를 구현, 기본 생성자만 존재, getter, setter 메소드를 작성하여 property에 대한 접근을 허용해야 한다.
+- EJB는 EJB 어플리케이션을 실행하기 위한 서버 또는 EJB컨테이너가 필요하며, JavaBeans는 직렬화를 구현, 기본 생성자만 존재, `getter`, `setter` 메소드를 작성하여 `property`에 대한 접근을 허용해야 한다.
 
 
-출처  
+출처
 <https://pediaa.com/what-is-the-difference-between-ejb-and-javabeans/>
