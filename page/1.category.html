@@ -5,10 +5,6 @@ permalink: /category/
 type: page
 ---
 
-<script>
-  const hash = decodeURI(window.location.hash.substr(1));
-</script>
-
 <div id="post-list">
   <h1>{{page.title}}</h1>
   <hr>
@@ -27,13 +23,15 @@ type: page
   const postList = new Vue({
     el: '#post-list',
     data: {
-      posts: []
+      posts: [],
+      hash : {}
     }
   });
 
   axios.get('/posts.json')
   .then(function (response) {
     postList.posts = response.data.posts;
+    postList.hash = decodeURI(window.location.hash.substr(1));
   })
   .catch(function (error) {
     console.log(error);
