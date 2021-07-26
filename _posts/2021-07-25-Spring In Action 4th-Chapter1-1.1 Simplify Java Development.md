@@ -3,7 +3,7 @@ layout: post
 title: 1.1 자바 개발 간소화
 
 categories:
-- Spring-In-Action-4th-Edition
+- [Spring-In-Action-4th-Edition]
 
 tags:
 - [Spring In Action, EJB, POJO, JavaBeans, Bean]
