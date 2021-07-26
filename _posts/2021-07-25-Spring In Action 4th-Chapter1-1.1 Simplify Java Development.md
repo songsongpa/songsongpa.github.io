@@ -3,14 +3,19 @@ layout: post
 title: 1.1 자바 개발 간소화
 
 categories:
-- [Spring-In-Action-4th-Edition]
+- Spring-In-Action-4th-Edition
 
 tags:
 - [Spring In Action, EJB, POJO, JavaBeans, Bean]
 
-toc: true
-toc:sticky: true
-toc_label: "TEST"
+toc:
+- true
+
+toc:sticky:
+- true
+
+toc_label:
+- "TEST"
 
 date: 2021-07-25
 last_modified_at: 2021-07-25
