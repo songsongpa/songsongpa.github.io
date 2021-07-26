@@ -10,7 +10,7 @@ type: page
   <hr>
   <h2 id="{{category | first}}">{{ hash }}</h2>
   <ul>
-    <li v-for="p in posts" v-if="p.categories.indexOf(hash) != -1">
+    <li v-for="p in posts" v-if="p.categories.indexOf(posts.hash) != -1">
       <time>
         {{ p.date }}
       </time>
