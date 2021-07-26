@@ -5,6 +5,10 @@ permalink: /category/
 type: page
 ---
 
+<script>
+  const hash = decodeURI(window.location.hash.substr(1));
+</script>
+
 {% assign esc_title="{{ p.title }}" %}
 {% assign esc_date="{{ p.date }}" %}
 {% assign esc_ctgname="{{ hash }}" %}
@@ -24,8 +28,6 @@ type: page
 </div>
 
 <script>
-  const hash = decodeURI(window.location.hash.substr(1));
-
   const postList = new Vue({
     el: '#post-list',
     data: {
