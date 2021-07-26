@@ -5,23 +5,6 @@ permalink: /tag/
 icon: th-list
 type: page
 ---
-{% assign esc_title="{{ p.title }}" %}
-{% assign esc_date="{{ p.date }}" %}
-{% assign esc_tagname="{{ hash }}" %}
-
-<div id="post-list" xmlns:v-bind="http://www.w3.org/1999/xhtml">
-  <h1>{{page.title}}</h1>
-  <hr>
-  <h2 id="{{category | first}}">{{ hash }}</h2>
-  <ul>
-    <li v-for="p in posts" v-if="p.tags.indexOf(hash) != -1">
-      <time>
-        {{ p.date }}
-      </time>
-      <a v-bind:href="p.url">{{ p.title }}</a>
-    </li>
-  </ul>
-</div>
 
 <script>
   var hash = decodeURI(window.location.hash.substr(1));
@@ -41,3 +24,21 @@ type: page
       console.log(error);
     });
 </script>
+
+{% assign esc_title="{{ p.title }}" %}
+{% assign esc_date="{{ p.date }}" %}
+{% assign esc_tagname="{{ hash }}" %}
+
+<div id="post-list" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+  <h1>{{page.title}}</h1>
+  <hr>
+  <h2 id="{{category | first}}">{{ hash }}</h2>
+  <ul>
+    <li v-for="p in posts" v-if="p.tags.indexOf(hash) != -1">
+      <time>
+        {{ p.date }}
+      </time>
+      <a v-bind:href="p.url">{{ p.title }}</a>
+    </li>
+  </ul>
+</div>
