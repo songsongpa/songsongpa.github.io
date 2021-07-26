@@ -25,9 +25,9 @@ type: page
 </div>
 
 <script>
-  var hash = decodeURI(window.location.hash.substr(1));
+  const hash = decodeURI(window.location.hash.substr(1));
 
-  var postList = new Vue({
+  const postList = new Vue({
     el: '#post-list',
     data: {
       posts: []
