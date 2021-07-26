@@ -6,10 +6,6 @@ icon: th-list
 type: page
 ---
 
-<script>
-  var hash = decodeURI(window.location.hash.substr(1));
-</script>
-
 <div id="post-list" xmlns:v-bind="http://www.w3.org/1999/xhtml">
   <h1>{{page.title}}</h1>
   <hr>
@@ -35,6 +31,7 @@ type: page
   axios.get('/posts.json')
     .then(function (response) {
       postList.posts = response.data.posts;
+      postList.posts.hash = decodeURI(window.location.hash.substr(1));
     })
     .catch(function (error) {
       console.log(error);
