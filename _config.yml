@@ -9,6 +9,9 @@ baseurl: ""
 paginate: 10
 permalink: pretty
 
+category_dir: category/
+tag_dir: tag/
+
 # About/contact
 author:
   name: songsongpa

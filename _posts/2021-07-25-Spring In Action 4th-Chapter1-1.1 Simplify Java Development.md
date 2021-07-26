@@ -105,5 +105,5 @@ public class PersonBean implements java.io.Serializable {
 - EJB는 EJB 어플리케이션을 실행하기 위한 서버 또는 EJB컨테이너가 필요하며, JavaBeans는 직렬화를 구현, 기본 생성자만 존재, `getter`, `setter` 메소드를 작성하여 `property`에 대한 접근을 허용해야 한다.
 
 
-출처  
+출처
 <https://pediaa.com/what-is-the-difference-between-ejb-and-javabeans/>
