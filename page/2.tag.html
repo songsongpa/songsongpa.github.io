@@ -5,11 +5,15 @@ permalink: /tags/
 type: page
 ---
 
-{% for tag in site.data.tags %}
-<span class="tag" data-tag="{{tag}}">
-  {{ site.data.format[tag] }}
-</span>
+{% if page.tags %}
+{% for tag in page.tags %}
+{% if site.data.tags contains tag %}
+<a href="/posts/?tag={{ tag }}">
+  <span class="tag">{{ site.data.format[tag] }}</span>
+</a>
+{% endif %}
 {% endfor %}
+{% endif %}
 
 
 {% for post in site.posts %}
@@ -20,7 +24,60 @@ type: page
     {% endfor %}
   {% endif %}>
   <article class="post-preview">
-    test
+    <div id="post-list">
+      <ul>
+        <li>
+          <time>
+            {{ post.date }}
+          </time>
+          <a href="{{ root_url }}/{{ site.tag_dir }}/">{{ post.title }}</a>
+        </li>
+      </ul>
+    </div>
   </article>
 </div>
 {% endfor %}
+
+<script>
+  $(document).ready(function() {
+    let currentTag = "";
+    const queryTag = getQuery().tag;
+    if (queryTag) {
+      currentTag = queryTag;
+      filterByTagName(currentTag)
+    }
+  });
+
+  function getQuery() {
+    var params = {};
+
+    window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi,
+      function(str, key, value) {
+        params[key] = value;
+      }
+    );
+
+    return params;
+  }
+
+  $("[data-tag]").click((e) => {
+    currentTag = e.target.dataset.tag;
+    filterByTagName(currentTag);
+  })
+
+  function filterByTagName(tagName) {
+    $('.hidden').removeClass('hidden');
+    $('.post-wrapper').each((index, elem) => {
+      if (!elem.hasAttribute(`data-${tagName}`)) {
+        $(elem).addClass('hidden');
+      }
+    });
+    $(`.tag`).removeClass('selected');
+    $(`.tag[data-tag=${tagName}]`).addClass('selected');
+  }
+
+  function updateQueryString(tagName) {
+    const path = `${location.protocol}//${location.host}${location.pathname}?tag=${tagName}`;
+    window.history.replaceState({ path }, '', path);
+  }
+</script>
