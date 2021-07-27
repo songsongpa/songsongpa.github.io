@@ -6,7 +6,7 @@ categories:
 - spring-in-action-4th-edition
 
 tags:
-- [Spring In Action, EJB, POJO, JavaBeans, Bean]
+- [spring in action, ejb, pojo, javabeans, bean]
 
 toc:
 - true

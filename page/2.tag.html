@@ -6,39 +6,22 @@ icon: th-list
 type: page
 ---
 
-{% assign esc_title="{{ p.title }}" %}
-{% assign esc_date="{{ p.date }}" %}
-{% assign esc_tagname="{{ hash }}" %}
+{% for tag in site.data.tags %}
+<span class="tag" data-tag="{{tag}}">
+  {{ site.data.format[tag] }}
+</span>
+{% endfor %}
 
-<div id="post-list">
-  <h1>{{page.title}}</h1>
-  <hr>
-  <h2 id="{{category | first}}">{{ esc_tagname }}</h2>
-  <ul>
-    <li v-for="p in posts" v-if="p.tags.indexOf(hash) != -1">
-      <time>
-        {{ esc_date }}
-      </time>
-      <a v-bind:href="p.url">{{ esc_title }}</a>
-    </li>
-  </ul>
+
+{% for post in site.posts %}
+<div class="post-wrapper">
+  {% if post.tags %}
+    {% for tag in post.tags %}
+      data-{{ tag }}
+    {% endfor %}
+  {% endif %}>
+  <article class="post-preview">
+    test
+  </article>
 </div>
-
-<script>
-  const postList = new Vue({
-    el: '#post-list',
-    data: {
-      posts: [],
-      hash: {}
-    }
-  });
-
-  axios.get('/posts.json')
-  .then(function (response) {
-    postList.posts = response.data.posts;
-    postList.hash = decodeURI(window.location.hash.substr(1));
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
-</script>
+{% endfor %}

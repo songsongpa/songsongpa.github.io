@@ -10,7 +10,7 @@ paginate: 10
 permalink: pretty
 
 category_dir: category/
-tag_dir: tag/
+tag_dir: tags/
 
 # About/contact
 author:
