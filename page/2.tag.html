@@ -28,9 +28,9 @@ type: page
       <ul>
         <li>
           <time>
-            {{ post.date }}
+            {{ page.date | date:"%F" }}
           </time>
-          <a href="{{ root_url }}/{{ site.tag_dir }}/">{{ post.title }}</a>
+          <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
         </li>
       </ul>
     </div>
